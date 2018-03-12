@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27004.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Multi-Game Launcher", "Multi-Launcher\Multi-Game Launcher.csproj", "{810B1D97-896A-43BC-9C2D-C02B8D133FDC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{810B1D97-896A-43BC-9C2D-C02B8D133FDC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{810B1D97-896A-43BC-9C2D-C02B8D133FDC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{810B1D97-896A-43BC-9C2D-C02B8D133FDC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{810B1D97-896A-43BC-9C2D-C02B8D133FDC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {52E5DFCE-37B2-40FD-B175-613FFDF5185E}
+	EndGlobalSection
+EndGlobal

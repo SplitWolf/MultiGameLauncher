@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<sharpUpdate>
+    <update appID="MultiGameLauncher">
+       <version>1.0.0.0</version>
+       <url>https://bitbucket.org/SplitWolf/multi-launcher/raw/6186c7de0f5507aa4cb6b10a7b51e90d3a60bfb4/Multi-Game%20Launcher.exe</url>
+       <fileName>Multi-Game Launcher</fileName>
+       <md5>4850F70A8F4C4303FDFF60B2D0231697</md5>
+       <description>
+        Added the option to launch factorio!    
+       </description>
+       <launchArgs>1.0.0.0</launchArgs>
+  </update>
+</sharpUpdate>
