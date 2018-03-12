@@ -51,7 +51,7 @@ namespace Multi_Game_Launcher
 
         public Uri UpdateXmlLocation
         {
-            get { return new Uri(""); }
+            get { return new Uri("https://raw.githubusercontent.com/MWolf88/MultiGameLauncher/master/project.xml"); }
         }
 
         public Assembly ApplicationAssembly
