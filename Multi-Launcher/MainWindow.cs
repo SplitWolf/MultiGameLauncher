@@ -13,7 +13,7 @@ namespace Multi_Game_Launcher
     {
 
         private SharpUpdater updater;
-        private Uri xmlLocation;
+        private Uri xmlLocation = new Uri("https://raw.githubusercontent.com/MWolf88/MultiGameLauncher/master/project.xml");
 
         //Initalize Main Window
         public LauncherWindow(string[] args)
@@ -51,7 +51,7 @@ namespace Multi_Game_Launcher
 
         public Uri UpdateXmlLocation
         {
-            get { return new Uri("https://raw.githubusercontent.com/MWolf88/MultiGameLauncher/master/project.xml"); }
+            get { return xmlLocation; }
         }
 
         public Assembly ApplicationAssembly
@@ -69,6 +69,9 @@ namespace Multi_Game_Launcher
         {
             get { return this; }
         }
+
+        public Uri XmlLocation { get => xmlLocation; set => xmlLocation = value; }
+        public Uri XmlLocation1 { get => xmlLocation; set => xmlLocation = value; }
         #endregion
 
         //Runs on Program Exit, Determines Weather the Program Should Minimize or Exit When A Application Is Started.
