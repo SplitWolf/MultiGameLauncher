@@ -72,7 +72,7 @@
             this.QuitBtn.Location = new System.Drawing.Point(12, 468);
             this.QuitBtn.Name = "QuitBtn";
             this.QuitBtn.Size = new System.Drawing.Size(114, 46);
-            this.QuitBtn.TabIndex = 0;
+            this.QuitBtn.TabIndex = 1;
             this.QuitBtn.Text = "Quit";
             this.QuitBtn.UseVisualStyleBackColor = true;
             this.QuitBtn.Click += new System.EventHandler(this.QuitBtn_Click);
@@ -84,7 +84,7 @@
             this.PlayBtn.Location = new System.Drawing.Point(776, 459);
             this.PlayBtn.Name = "PlayBtn";
             this.PlayBtn.Size = new System.Drawing.Size(126, 55);
-            this.PlayBtn.TabIndex = 1;
+            this.PlayBtn.TabIndex = 0;
             this.PlayBtn.Text = "Play";
             this.PlayBtn.UseVisualStyleBackColor = true;
             this.PlayBtn.Click += new System.EventHandler(this.PlayBtn_Click);
@@ -198,43 +198,42 @@
             // MCTEXT
             // 
             this.MCTEXT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.MCTEXT.AutoSize = true;
             this.MCTEXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.MCTEXT.Location = new System.Drawing.Point(24, 144);
             this.MCTEXT.Name = "MCTEXT";
             this.MCTEXT.Size = new System.Drawing.Size(101, 26);
             this.MCTEXT.TabIndex = 11;
             this.MCTEXT.Text = "Minecraft";
+            this.MCTEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MCTEXT.Click += new System.EventHandler(this.MC_Click);
             // 
             // RLTEXT
             // 
             this.RLTEXT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.RLTEXT.AutoSize = true;
             this.RLTEXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.RLTEXT.Location = new System.Drawing.Point(147, 144);
+            this.RLTEXT.Location = new System.Drawing.Point(138, 144);
             this.RLTEXT.Name = "RLTEXT";
-            this.RLTEXT.Size = new System.Drawing.Size(84, 52);
+            this.RLTEXT.Size = new System.Drawing.Size(102, 52);
             this.RLTEXT.TabIndex = 12;
-            this.RLTEXT.Text = "Rocket\r\nLeauge\r\n";
+            this.RLTEXT.Text = "Rocket\r\nLeague\r\n";
+            this.RLTEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.RLTEXT.Click += new System.EventHandler(this.RL_Click);
             // 
             // CSGOTEXT
             // 
             this.CSGOTEXT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.CSGOTEXT.AutoSize = true;
             this.CSGOTEXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.CSGOTEXT.Location = new System.Drawing.Point(282, 144);
+            this.CSGOTEXT.Location = new System.Drawing.Point(272, 144);
             this.CSGOTEXT.Name = "CSGOTEXT";
-            this.CSGOTEXT.Size = new System.Drawing.Size(83, 26);
+            this.CSGOTEXT.Size = new System.Drawing.Size(102, 26);
             this.CSGOTEXT.TabIndex = 13;
             this.CSGOTEXT.Text = "CS:GO";
+            this.CSGOTEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.CSGOTEXT.Click += new System.EventHandler(this.CSGO_Click);
             // 
             // SCRAPMECHTEXT
             // 
             this.SCRAPMECHTEXT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.SCRAPMECHTEXT.AutoSize = true;
             this.SCRAPMECHTEXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.SCRAPMECHTEXT.Location = new System.Drawing.Point(540, 144);
             this.SCRAPMECHTEXT.Name = "SCRAPMECHTEXT";
@@ -260,7 +259,7 @@
             // 
             this.ScrapMechIMG.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.ScrapMechIMG.Image = global::Multi_Game_Launcher.Properties.Resources.ScrapMechLogo;
-            this.ScrapMechIMG.Location = new System.Drawing.Point(539, 41);
+            this.ScrapMechIMG.Location = new System.Drawing.Point(545, 41);
             this.ScrapMechIMG.Name = "ScrapMechIMG";
             this.ScrapMechIMG.Size = new System.Drawing.Size(102, 100);
             this.ScrapMechIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -319,12 +318,11 @@
             // LOLTEXT
             // 
             this.LOLTEXT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.LOLTEXT.AutoSize = true;
             this.LOLTEXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.LOLTEXT.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.LOLTEXT.Location = new System.Drawing.Point(394, 144);
+            this.LOLTEXT.Location = new System.Drawing.Point(387, 144);
             this.LOLTEXT.Name = "LOLTEXT";
-            this.LOLTEXT.Size = new System.Drawing.Size(120, 52);
+            this.LOLTEXT.Size = new System.Drawing.Size(138, 52);
             this.LOLTEXT.TabIndex = 18;
             this.LOLTEXT.Text = "League OF\r\nLegends";
             this.LOLTEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -333,25 +331,25 @@
             // UnturnedTEXT
             // 
             this.UnturnedTEXT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.UnturnedTEXT.AutoSize = true;
             this.UnturnedTEXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.UnturnedTEXT.Location = new System.Drawing.Point(678, 146);
             this.UnturnedTEXT.Name = "UnturnedTEXT";
             this.UnturnedTEXT.Size = new System.Drawing.Size(101, 26);
             this.UnturnedTEXT.TabIndex = 19;
             this.UnturnedTEXT.Text = "Unturned";
+            this.UnturnedTEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.UnturnedTEXT.Click += new System.EventHandler(this.Unturned_Click);
             // 
             // FactorioTEXT
             // 
             this.FactorioTEXT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.FactorioTEXT.AutoSize = true;
             this.FactorioTEXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
             this.FactorioTEXT.Location = new System.Drawing.Point(804, 144);
             this.FactorioTEXT.Name = "FactorioTEXT";
             this.FactorioTEXT.Size = new System.Drawing.Size(90, 26);
             this.FactorioTEXT.TabIndex = 17;
             this.FactorioTEXT.Text = "Factorio";
+            this.FactorioTEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.FactorioTEXT.Click += new System.EventHandler(this.Factorio_Click);
             // 
             // FactorioIMG

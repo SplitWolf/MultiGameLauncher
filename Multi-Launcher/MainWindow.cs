@@ -11,32 +11,54 @@ namespace Multi_Game_Launcher
 {
     public partial class LauncherWindow : Form, ISharpUpdatable
     {
-
+        private GameData gameData;
+        private Functions func;
+        /// <summary>
+        /// Sharp updater var
+        /// </summary>
         private SharpUpdater updater;
+        /// <summary>
+        /// Uri location for Sharp Updater
+        /// </summary>
         private Uri xmlLocation = new Uri("https://raw.githubusercontent.com/MWolf88/MultiGameLauncher/master/project.xml");
 
         //Initalize Main Window
         public LauncherWindow(string[] args)
         {
             InitializeComponent();
+            gameData = new GameData();
+            func = new Functions();
 
             #region Init
-            Custom_Functions.CreateFiles();
+            func.CreateFiles();
+            gameData.AddGame("Minecraft", Path.Combine(func.mgldir, @"mcexe.dat"));
+            gameData.AddGame("Rocket League", "steam://rungameid/252950", false, "Steam");
+            gameData.AddGame("CS:GO", "steam://rungameid/730", false, "Steam");
+            gameData.AddGame("League OF Legends", Path.Combine(func.mgldir, @"lolexe.dat"));
+            gameData.AddGame("Scrap Mechanic", "steam://rungameid/387990", false, "Steam");
+            gameData.AddGame("Unturned", "steam://rungameid/304930", false, "Steam");
+            gameData.AddGame("Factorio", Path.Combine(func.mgldir, @"factorioexe.dat"));
             #endregion
 
-                try
-                {
-                    MessageBox.Show(string.Format("Updated to {0}", args[0]), "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch
-                {
 
-                }
+            // If launched with args (from sharp updater) say Updated to that version
+            try
+            {
+                MessageBox.Show(string.Format("Updated to {0}", args[0]), "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch
+            {
 
+            }
+
+            //Sharp update check for updates
             updater = new SharpUpdater(this);
             updater.DoUpdate();
         }
 
+        /// <summary>
+        /// Sharp update config
+        /// </summary>
         #region SharpUpdate
 
         public string ApplicationName
@@ -74,33 +96,14 @@ namespace Multi_Game_Launcher
         public Uri XmlLocation1 { get => xmlLocation; set => xmlLocation = value; }
         #endregion
 
-        //Runs on Program Exit, Determines Weather the Program Should Minimize or Exit When A Application Is Started.
-        void ExitMode()
-        {
-            string state = "mgl";
-
-            if (File.Exists(Path.Combine(Custom_Functions.mgldir, @"switch.dat")))
-            {
-                state = File.ReadAllText(Path.Combine(Custom_Functions.mgldir, @"switch.dat"));
-            }
-
-            if (state.Equals("m"))
-            {
-                WindowState = FormWindowState.Minimized;
-            }
-            else
-            {
-                Close();
-            }
-
-        }
-
         //Game Vars
         public string Game;
         public int GameInt = 8;
         public bool MakeFiles;
 
-
+        /// <summary>
+        /// Handles window movement, QuitBtn and MinimizeBtn
+        /// </summary>
     #region WindowEventHandler
 
         //Mouse Tracking Vars For move window.
@@ -138,6 +141,7 @@ namespace Multi_Game_Launcher
         }
         #endregion
 
+
     #region Select Game Events
         // Click Select Game Events
         private void MC_Click(object sender, EventArgs e)
@@ -148,7 +152,7 @@ namespace Multi_Game_Launcher
         }
         private void RL_Click(object sender, EventArgs e)
         {
-            Game = "Rocket Leauge";
+            Game = "Rocket League";
             SelGame.Text = Game.ToString();
             GameInt = 2;
         }
@@ -196,97 +200,7 @@ namespace Multi_Game_Launcher
         //Play Selected Game On Play Button Click
         private void PlayBtn_Click(object sender, EventArgs e)
         {
-            string App = "h";
-
-            switch (GameInt)
-            {
-                case 1:
-
-                    App = File.ReadAllText(Path.Combine(Custom_Functions.mgldir, @"mcexe.dat"));
-                    try
-                    {
-                        Process.Start(App);
-                    }
-                    catch (Win32Exception)
-                    {
-                        MessageBox.Show("Please change the location of the Minecraft executable in Options or Install it", "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    ExitMode();
-                    break; 
-                case 2:
-                    try
-                    {
-                        Process.Start("steam://rungameid/252950");
-                    }
-                    catch (Win32Exception)
-                    {
-                        MessageBox.Show("Please Install Steam From: \n\n store.steampowered.com", "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    ExitMode();
-                    break;
-                case 3:
-                    try
-                    {
-                        Process.Start("steam://rungameid/730");
-                    }
-                    catch (Win32Exception)
-                    {
-                        MessageBox.Show("Please Install Steam From: \n\n store.steampowered.com", "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    ExitMode();
-                    break;
-                case 4:
-                     App = File.ReadAllText(Path.Combine(Custom_Functions.mgldir, @"lolexe.dat"));
-                    try
-                    {
-                        Process.Start(App);
-                    }
-                    catch (Win32Exception)
-                    {
-                        MessageBox.Show("Please change the location of the League of Legends executable in Options or Install it", "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    ExitMode();
-                    break;
-                case 5:
-                    try
-                    {
-                        Process.Start("steam://rungameid/387990");
-                    }
-                    catch (Win32Exception)
-                    {
-                        MessageBox.Show("Please Install Steam From: \n\n store.steampowered.com", "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    break;
-                case 6:
-                    try
-                    {
-                        Process.Start("steam://rungameid/304930");
-                    }
-                    catch (Win32Exception)
-                    {
-                        MessageBox.Show("Please Install Steam From: \n\n store.steampowered.com", "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-
-                    ExitMode();
-                    break;
-                case 7:
-                    App = File.ReadAllText(Path.Combine(Custom_Functions.mgldir, @"factorioexe.dat"));
-                    try
-                    {
-                        Process.Start(App);
-                    }
-                    catch (Win32Exception)
-                    {
-                        MessageBox.Show("Please Change The Factorio Executeable Location In Options or Install it", "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    break;
-                case 8:
-                    MessageBox.Show("Please Select a Game To Launch", "Multi-Game Launcher", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    break;
-            }
+            gameData.StartGame(SelGame.Text, this);
         }
     }
 }

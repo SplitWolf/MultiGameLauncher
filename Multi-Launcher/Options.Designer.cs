@@ -46,6 +46,9 @@
             this.OptionsFileLoctextBox3 = new System.Windows.Forms.TextBox();
             this.FactorioLabel = new System.Windows.Forms.Label();
             this.BrowseBtn3 = new System.Windows.Forms.Button();
+            this.OptionsFileLoctextBox4 = new System.Windows.Forms.TextBox();
+            this.BrowseBtn4 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.MovePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MGL2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MGL1)).BeginInit();
@@ -132,6 +135,7 @@
             this.BrowseBtn1.Name = "BrowseBtn1";
             this.BrowseBtn1.Size = new System.Drawing.Size(75, 23);
             this.BrowseBtn1.TabIndex = 13;
+            this.BrowseBtn1.TabStop = false;
             this.BrowseBtn1.Text = "Browse...";
             this.BrowseBtn1.UseVisualStyleBackColor = true;
             this.BrowseBtn1.Click += new System.EventHandler(this.BrowseBtn1_Click);
@@ -142,6 +146,7 @@
             this.BrowseBtn2.Name = "BrowseBtn2";
             this.BrowseBtn2.Size = new System.Drawing.Size(75, 23);
             this.BrowseBtn2.TabIndex = 14;
+            this.BrowseBtn2.TabStop = false;
             this.BrowseBtn2.Text = "Browse...";
             this.BrowseBtn2.UseVisualStyleBackColor = true;
             this.BrowseBtn2.Click += new System.EventHandler(this.BrowseBtn2_Click);
@@ -154,6 +159,7 @@
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(130, 66);
             this.BackBtn.TabIndex = 16;
+            this.BackBtn.TabStop = false;
             this.BackBtn.Text = "Back";
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
@@ -184,7 +190,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.label1.Location = new System.Drawing.Point(215, 216);
+            this.label1.Location = new System.Drawing.Point(215, 291);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(271, 26);
             this.label1.TabIndex = 20;
@@ -195,7 +201,7 @@
             // 
             this.SwitchLabel.AutoSize = true;
             this.SwitchLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
-            this.SwitchLabel.Location = new System.Drawing.Point(478, 216);
+            this.SwitchLabel.Location = new System.Drawing.Point(478, 291);
             this.SwitchLabel.Name = "SwitchLabel";
             this.SwitchLabel.Size = new System.Drawing.Size(0, 26);
             this.SwitchLabel.TabIndex = 21;
@@ -228,15 +234,50 @@
             this.BrowseBtn3.Name = "BrowseBtn3";
             this.BrowseBtn3.Size = new System.Drawing.Size(75, 23);
             this.BrowseBtn3.TabIndex = 24;
+            this.BrowseBtn3.TabStop = false;
             this.BrowseBtn3.Text = "Browse...";
             this.BrowseBtn3.UseVisualStyleBackColor = true;
             this.BrowseBtn3.Click += new System.EventHandler(this.BrowseBtn3_Click);
+            // 
+            // OptionsFileLoctextBox4
+            // 
+            this.OptionsFileLoctextBox4.Location = new System.Drawing.Point(12, 211);
+            this.OptionsFileLoctextBox4.Name = "OptionsFileLoctextBox4";
+            this.OptionsFileLoctextBox4.Size = new System.Drawing.Size(654, 20);
+            this.OptionsFileLoctextBox4.TabIndex = 25;
+            this.OptionsFileLoctextBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // BrowseBtn4
+            // 
+            this.BrowseBtn4.Location = new System.Drawing.Point(672, 211);
+            this.BrowseBtn4.Name = "BrowseBtn4";
+            this.BrowseBtn4.Size = new System.Drawing.Size(75, 23);
+            this.BrowseBtn4.TabIndex = 26;
+            this.BrowseBtn4.TabStop = false;
+            this.BrowseBtn4.Text = "Browse...";
+            this.BrowseBtn4.UseVisualStyleBackColor = true;
+            this.BrowseBtn4.Click += new System.EventHandler(this.BrowseBtn4_Click);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.label2.Location = new System.Drawing.Point(255, 182);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(214, 26);
+            this.label2.TabIndex = 27;
+            this.label2.Text = "Fornite.exe Location:";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Options
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 348);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.BrowseBtn4);
+            this.Controls.Add(this.OptionsFileLoctextBox4);
             this.Controls.Add(this.BrowseBtn3);
             this.Controls.Add(this.FactorioLabel);
             this.Controls.Add(this.OptionsFileLoctextBox3);
@@ -283,5 +324,8 @@
         private System.Windows.Forms.TextBox OptionsFileLoctextBox3;
         private System.Windows.Forms.Label FactorioLabel;
         private System.Windows.Forms.Button BrowseBtn3;
+        private System.Windows.Forms.TextBox OptionsFileLoctextBox4;
+        private System.Windows.Forms.Button BrowseBtn4;
+        private System.Windows.Forms.Label label2;
     }
 }
