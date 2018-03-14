@@ -7,12 +7,12 @@ namespace Multi_Game_Launcher
     public class Functions
     {
         //File to store Custom Functions useable throughout the application
-        public string mgldir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"mgl\");
+        public static string mgldir = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), @"mgl\");
 
         /// <summary>
         /// Create Game Location Files to Prevent Crash
         /// </summary>
-        public void CreateFiles()
+        public static void CreateFiles()
         {
             string write;
 
@@ -32,6 +32,12 @@ namespace Multi_Game_Launcher
             {
                 write = ".";
                 CreateFile(mgldir, Path.Combine(mgldir, @"factorioexe.dat"), write);
+            } 
+
+            if (!File.Exists(Path.Combine(mgldir, @"fortniteexe.dat")))
+            {
+                write = @"C:\Program Files\Epic Games\Fortnite\FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe";
+                CreateFile(mgldir, Path.Combine(mgldir, @"fortniteexe.dat"), write);
             }
         }
 
@@ -41,16 +47,14 @@ namespace Multi_Game_Launcher
         /// <param name="dirpath"></param>
         /// <param name="filepath"></param>
         /// <param name="text"></param>
-        public void CreateFile(string dirpath, string filepath, string text)
+        public static void CreateFile(string dirpath, string filepath, string text)
         {
             if (!File.Exists(filepath))
             {
-                System.IO.Directory.CreateDirectory(dirpath);
-                using (FileStream fs = File.Create(filepath))
+
+                using (StreamWriter sw = new StreamWriter(filepath))
                 {
-                    Byte[] info = new UTF8Encoding(true).GetBytes("");
-                    // Add some information to the file.
-                    fs.Write(info, 0, info.Length);
+                    sw.Write(text);
                 }
 
             }

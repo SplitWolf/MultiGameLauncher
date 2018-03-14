@@ -8,29 +8,28 @@ namespace Multi_Game_Launcher
     {
 
         private bool switchstate = false;
-        private Functions func = new Functions();
 
         public Options()
         {
             InitializeComponent();
 #region Intit
             string state;
-            TextBox[] t1 = new TextBox[3];
+            TextBox[] t1 = new TextBox[4];
             t1.SetValue(OptionsFileLoctextBox1, 0);
             t1.SetValue(OptionsFileLoctextBox2, 1);
             t1.SetValue(OptionsFileLoctextBox3, 2);
-            // t1.SetValue(OptionsFileLoctextBox4, 3);
-            string[] s1 = new string[3];
-            s1.SetValue(func.mgldir + @"mcexe.dat", 0);
-            s1.SetValue(func.mgldir + @"lolexe.dat", 1);
-            s1.SetValue(func.mgldir + @"factorioexe.dat", 2);
-            //s1.SetValue(func.mgldir + @"fortniteexe.dat", 3);
+            t1.SetValue(OptionsFileLoctextBox4, 3);
+            string[] s1 = new string[4];
+            s1.SetValue(Functions.mgldir + @"mcexe.dat", 0);
+            s1.SetValue(Functions.mgldir + @"lolexe.dat", 1);
+            s1.SetValue(Functions.mgldir + @"factorioexe.dat", 2);
+            s1.SetValue(Functions.mgldir + @"fortniteexe.dat", 3);
 
-            Refill(t1, s1, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), @"Minecraft\MinecraftLauncher.exe"), @"C:\Riot Games\League of Legends\LeagueClient.exe", null);
+            Refill(t1, s1, Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFilesX86), @"Minecraft\MinecraftLauncher.exe"), @"C:\Riot Games\League of Legends\LeagueClient.exe", null, @"C:\Program Files\Epic Games\Fortnite\FortniteGame\Binaries\Win64\FortniteClient-Win64-Shipping.exe");
 
-            if (File.Exists(Path.Combine(func.mgldir, @"\switch.dat")))
+            if (File.Exists(Path.Combine(Functions.mgldir, @"\switch.dat")))
             {
-                state = File.ReadAllText(Path.Combine(func.mgldir, @"\switch.dat"));
+                state = File.ReadAllText(Path.Combine(Functions.mgldir, @"\switch.dat"));
 
                 if (state.Equals("e"))
                 {
@@ -66,13 +65,13 @@ namespace Multi_Game_Launcher
             {
                 switchstate = true;
                 SwitchLabel.Text = "Minimize";
-                File.WriteAllText(Path.Combine(func.mgldir, @"switch.dat"), "m");
+                File.WriteAllText(Path.Combine(Functions.mgldir, @"switch.dat"), "m");
             }
             else
             {
                 switchstate = false;
                 SwitchLabel.Text = "Exit";
-                File.WriteAllText(Path.Combine(func.mgldir, @"switch.dat"), "e");
+                File.WriteAllText(Path.Combine(Functions.mgldir, @"switch.dat"), "e");
             }
         }
 
@@ -80,8 +79,8 @@ namespace Multi_Game_Launcher
         {
             OFileDialog(
                 "Minecraft executable|minecraft.exe; MinecraftLauncher.exe",
-                func.mgldir,
-                Path.Combine(func.mgldir, @"mcexe.dat"),
+                Functions.mgldir,
+                Path.Combine(Functions.mgldir, @"mcexe.dat"),
                 "MinecraftLauncher.exe",
                 OptionsFileLoctextBox1
             );
@@ -91,8 +90,8 @@ namespace Multi_Game_Launcher
         {
             OFileDialog(
                "League of Legeneds Executable|LeagueClient.exe",
-               func.mgldir,
-               Path.Combine(func.mgldir, @"lolexe.dat"),
+               Functions.mgldir,
+               Path.Combine(Functions.mgldir, @"lolexe.dat"),
                "LeagueClient.exe",
                OptionsFileLoctextBox2
            );
@@ -102,8 +101,8 @@ namespace Multi_Game_Launcher
         {
             OFileDialog(
                "Factorio Executable|factorio.exe",
-               func.mgldir,
-               Path.Combine(func.mgldir, @"factorioexe.dat"),
+               Functions.mgldir,
+               Path.Combine(Functions.mgldir, @"factorioexe.dat"),
                "Factorio.exe",
                OptionsFileLoctextBox3
                );
@@ -111,10 +110,16 @@ namespace Multi_Game_Launcher
 
         private void BrowseBtn4_Click(object sender, EventArgs e)
         {
-
+            OFileDialog(
+               "Fornite Executable|FortniteClient-Win64-Shipping.exe",
+               Functions.mgldir,
+               Path.Combine(Functions.mgldir, @"fortniteexe.dat"),
+               "FortniteClient-Win64-Shipping.exe",
+               OptionsFileLoctextBox4
+               );
         }
 
-        #region Custom func
+        #region Custom Functions
 
 
         /// <summary>
@@ -132,12 +137,14 @@ namespace Multi_Game_Launcher
                 if (File.Exists(fileloc[i]))
                 {
                     textBoxes[i].Text = File.ReadAllText(fileloc[i]);
+                    Functions.CreateFile(Functions.mgldir, fileloc[i], File.ReadAllText(fileloc[i]));
                 }
                 else
                 {
                     if (defualtloc != null)
                     {
                         textBoxes[i].Text = defualtloc[i];
+                        Functions.CreateFile(Functions.mgldir, fileloc[i], defualtloc[i]);
                     }
                     else
                     {
@@ -184,7 +191,7 @@ namespace Multi_Game_Launcher
                 else
                 {
                     textbox.Text = ofd.FileName;
-                    func.CreateFile(dirpath, filepath, textforfile);
+                    Functions.CreateFile(dirpath, filepath, textforfile);
                     ofd.Reset();
                 }
             }
@@ -192,5 +199,10 @@ namespace Multi_Game_Launcher
 
 
         #endregion
+
+        private void OptionsFileLoctextBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

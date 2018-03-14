@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Options));
             this.MovePanel = new System.Windows.Forms.Panel();
-            this.MGL2 = new System.Windows.Forms.PictureBox();
-            this.MGL1 = new System.Windows.Forms.PictureBox();
             this.Minimize = new System.Windows.Forms.Label();
             this.Title = new System.Windows.Forms.Label();
             this.OptionsFileLoctextBox1 = new System.Windows.Forms.TextBox();
@@ -49,6 +47,8 @@
             this.OptionsFileLoctextBox4 = new System.Windows.Forms.TextBox();
             this.BrowseBtn4 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.MGL2 = new System.Windows.Forms.PictureBox();
+            this.MGL1 = new System.Windows.Forms.PictureBox();
             this.MovePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MGL2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MGL1)).BeginInit();
@@ -67,27 +67,6 @@
             this.MovePanel.Name = "MovePanel";
             this.MovePanel.Size = new System.Drawing.Size(864, 36);
             this.MovePanel.TabIndex = 6;
-            // 
-            // MGL2
-            // 
-            this.MGL2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.MGL2.Image = global::Multi_Game_Launcher.Properties.Resources.Icon;
-            this.MGL2.Location = new System.Drawing.Point(828, -1);
-            this.MGL2.Name = "MGL2";
-            this.MGL2.Size = new System.Drawing.Size(35, 35);
-            this.MGL2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MGL2.TabIndex = 16;
-            this.MGL2.TabStop = false;
-            // 
-            // MGL1
-            // 
-            this.MGL1.Image = global::Multi_Game_Launcher.Properties.Resources.Icon;
-            this.MGL1.Location = new System.Drawing.Point(0, -1);
-            this.MGL1.Name = "MGL1";
-            this.MGL1.Size = new System.Drawing.Size(35, 35);
-            this.MGL1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.MGL1.TabIndex = 15;
-            this.MGL1.TabStop = false;
             // 
             // Minimize
             // 
@@ -215,6 +194,7 @@
             this.OptionsFileLoctextBox3.Size = new System.Drawing.Size(654, 20);
             this.OptionsFileLoctextBox3.TabIndex = 22;
             this.OptionsFileLoctextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.OptionsFileLoctextBox3.TextChanged += new System.EventHandler(this.OptionsFileLoctextBox3_TextChanged);
             // 
             // FactorioLabel
             // 
@@ -269,6 +249,27 @@
             this.label2.TabIndex = 27;
             this.label2.Text = "Fornite.exe Location:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // MGL2
+            // 
+            this.MGL2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MGL2.Image = global::Multi_Game_Launcher.Properties.Resources.Icon;
+            this.MGL2.Location = new System.Drawing.Point(828, -1);
+            this.MGL2.Name = "MGL2";
+            this.MGL2.Size = new System.Drawing.Size(35, 35);
+            this.MGL2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MGL2.TabIndex = 16;
+            this.MGL2.TabStop = false;
+            // 
+            // MGL1
+            // 
+            this.MGL1.Image = global::Multi_Game_Launcher.Properties.Resources.Icon;
+            this.MGL1.Location = new System.Drawing.Point(0, -1);
+            this.MGL1.Name = "MGL1";
+            this.MGL1.Size = new System.Drawing.Size(35, 35);
+            this.MGL1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.MGL1.TabIndex = 15;
+            this.MGL1.TabStop = false;
             // 
             // Options
             // 

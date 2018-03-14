@@ -12,7 +12,6 @@ namespace Multi_Game_Launcher
 {
     public class GameData
     {
-        private Functions func = new Functions();
         
         private List<string> games = new List<string>();
         private List<bool> hasFileExt = new List<bool>();
@@ -41,9 +40,9 @@ namespace Multi_Game_Launcher
 
 
 
-            if (File.Exists(Path.Combine(func.mgldir, @"switch.dat")))
+            if (File.Exists(Path.Combine(Functions.mgldir, @"switch.dat")))
             {
-                state = File.ReadAllText(Path.Combine(func.mgldir, @"switch.dat"));
+                state = File.ReadAllText(Path.Combine(Functions.mgldir, @"switch.dat"));
             }
 
             if (state.Equals("m"))
@@ -85,14 +84,17 @@ namespace Multi_Game_Launcher
 
                 string mln = mlnameArray[index];
                 
-                if(File.Exists(process))
+                if(File.Exists(Functions.mgldir+process))
                 {
-                    process = File.ReadAllText(process);
+                    process = File.ReadAllText(Functions.mgldir+process);
                 }
+                Console.WriteLine(process);
+                Process p = new Process();
+                p.StartInfo.FileName = process;
 
                 try
                 {
-                    Process.Start(process);
+                    p.Start();
                     ExitMode(form);
                 }
                 catch (Win32Exception)

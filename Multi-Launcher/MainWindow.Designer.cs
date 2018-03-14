@@ -53,6 +53,8 @@
             this.UnturnedTEXT = new System.Windows.Forms.Label();
             this.FactorioTEXT = new System.Windows.Forms.Label();
             this.FactorioIMG = new System.Windows.Forms.PictureBox();
+            this.FortniteIMG = new System.Windows.Forms.PictureBox();
+            this.ForniteTEXT = new System.Windows.Forms.Label();
             this.MovePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.MGL2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MGL1)).BeginInit();
@@ -63,6 +65,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RLIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MCIMG)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FactorioIMG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FortniteIMG)).BeginInit();
             this.SuspendLayout();
             // 
             // QuitBtn
@@ -364,6 +367,31 @@
             this.FactorioIMG.TabStop = false;
             this.FactorioIMG.Click += new System.EventHandler(this.Factorio_Click);
             // 
+            // FortniteIMG
+            // 
+            this.FortniteIMG.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.FortniteIMG.Image = global::Multi_Game_Launcher.Properties.Resources.Fornite_Logo;
+            this.FortniteIMG.Location = new System.Drawing.Point(406, 213);
+            this.FortniteIMG.Name = "FortniteIMG";
+            this.FortniteIMG.Size = new System.Drawing.Size(102, 100);
+            this.FortniteIMG.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.FortniteIMG.TabIndex = 20;
+            this.FortniteIMG.TabStop = false;
+            this.FortniteIMG.Click += new System.EventHandler(this.Fornite_Click);
+            // 
+            // ForniteTEXT
+            // 
+            this.ForniteTEXT.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.ForniteTEXT.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.25F);
+            this.ForniteTEXT.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.ForniteTEXT.Location = new System.Drawing.Point(413, 316);
+            this.ForniteTEXT.Name = "ForniteTEXT";
+            this.ForniteTEXT.Size = new System.Drawing.Size(82, 27);
+            this.ForniteTEXT.TabIndex = 21;
+            this.ForniteTEXT.Text = "Fornite";
+            this.ForniteTEXT.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ForniteTEXT.Click += new System.EventHandler(this.Fornite_Click);
+            // 
             // LauncherWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,6 +399,8 @@
             this.BackgroundImage = global::Multi_Game_Launcher.Properties.Resources.Icon;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(914, 526);
+            this.Controls.Add(this.ForniteTEXT);
+            this.Controls.Add(this.FortniteIMG);
             this.Controls.Add(this.UnturnedTEXT);
             this.Controls.Add(this.LOLTEXT);
             this.Controls.Add(this.FactorioTEXT);
@@ -408,6 +438,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.RLIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MCIMG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FactorioIMG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.FortniteIMG)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,6 +470,8 @@
         private System.Windows.Forms.PictureBox MGL2;
         private System.Windows.Forms.Label FactorioTEXT;
         private System.Windows.Forms.PictureBox FactorioIMG;
+        private System.Windows.Forms.PictureBox FortniteIMG;
+        private System.Windows.Forms.Label ForniteTEXT;
     }
 }
 

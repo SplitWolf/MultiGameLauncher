@@ -12,7 +12,6 @@ namespace Multi_Game_Launcher
     public partial class LauncherWindow : Form, ISharpUpdatable
     {
         private GameData gameData;
-        private Functions func;
         /// <summary>
         /// Sharp updater var
         /// </summary>
@@ -27,17 +26,17 @@ namespace Multi_Game_Launcher
         {
             InitializeComponent();
             gameData = new GameData();
-            func = new Functions();
 
             #region Init
-            func.CreateFiles();
-            gameData.AddGame("Minecraft", Path.Combine(func.mgldir, @"mcexe.dat"));
+            Functions.CreateFiles();
+            gameData.AddGame("Minecraft", "mcexe.dat");
             gameData.AddGame("Rocket League", "steam://rungameid/252950", false, "Steam");
             gameData.AddGame("CS:GO", "steam://rungameid/730", false, "Steam");
-            gameData.AddGame("League OF Legends", Path.Combine(func.mgldir, @"lolexe.dat"));
+            gameData.AddGame("League OF Legends", "lolexe.dat");
             gameData.AddGame("Scrap Mechanic", "steam://rungameid/387990", false, "Steam");
             gameData.AddGame("Unturned", "steam://rungameid/304930", false, "Steam");
-            gameData.AddGame("Factorio", Path.Combine(func.mgldir, @"factorioexe.dat"));
+            gameData.AddGame("Factorio", "factorioexe.dat");
+            gameData.AddGame("Fortnite", "fortniteexe.dat");
             #endregion
 
 
@@ -148,43 +147,41 @@ namespace Multi_Game_Launcher
         {
             Game = "Minecraft";
             SelGame.Text = Game.ToString();
-            GameInt = 1;
         }
         private void RL_Click(object sender, EventArgs e)
         {
             Game = "Rocket League";
             SelGame.Text = Game.ToString();
-            GameInt = 2;
         }
         private void CSGO_Click(object sender, EventArgs e)
         {
             Game = "CS:GO";
             SelGame.Text = Game.ToString();
-            GameInt = 3;
         }
         private void LOL_Click(object sender, EventArgs e)
         {
-            Game = "Leauge OF Legends";
+            Game = "League OF Legends";
             SelGame.Text = Game.ToString();
-            GameInt = 4;
         }
         private void ScrapMech_Click(object sender, EventArgs e)
         {
             Game = "Scrap Mechanic";
             SelGame.Text = Game.ToString();
-            GameInt = 5;
         }
         private void Unturned_Click(object sender, EventArgs e)
         {
             Game = "Unturned";
             SelGame.Text = Game.ToString();
-            GameInt = 6;
         }
         private void Factorio_Click(object sender, EventArgs e)
         {
             Game = "Factorio";
             SelGame.Text = Game.ToString();
-            GameInt = 7;
+        }
+        private void Fornite_Click(object sender, EventArgs e)
+        {
+            Game = "Fortnite";
+            SelGame.Text = Game.ToString();
         }
     #endregion
 
