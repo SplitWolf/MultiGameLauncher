@@ -199,10 +199,5 @@ namespace Multi_Game_Launcher
 
 
         #endregion
-
-        private void OptionsFileLoctextBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

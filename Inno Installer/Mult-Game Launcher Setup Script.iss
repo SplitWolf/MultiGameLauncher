@@ -2,7 +2,7 @@
 ; SEE THE DOCUMENTATION FOR DETAILS ON CREATING INNO SETUP SCRIPT FILES!
 
 #define MyAppName "Multi-Game Launcher"
-#define MyAppVersion "1.1.0.0"
+#define MyAppVersion "1.2.0.0"
 #define MyAppPublisher "HeyItsSplit."
 #define MyAppExeName "Multi-Game Launcher.exe"
 
@@ -17,7 +17,7 @@ AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
 DefaultDirName={pf}\{#MyAppName}
 DisableProgramGroupPage=yes
-OutputDir=D:\CODING\VS\Multi-Launcher\Inno Installer
+OutputDir=D:\CODING\VS\Multi-Launcher\Final
 OutputBaseFilename=MGL-Setup
 SetupIconFile=D:\CODING\VS\Multi-Launcher\Icons\Icon.ico
 Compression=lzma
